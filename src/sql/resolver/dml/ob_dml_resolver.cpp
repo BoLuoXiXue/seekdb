@@ -5297,6 +5297,7 @@ int ObDMLResolver::resolve_approx_clause(const ParseNode *approx_node)
     int order_size = stmt->get_order_item_size();
     bool found = false;
     bool has_const = false;
+    bool has_null_param = false;
     bool is_match = false;
     bool is_vec_index_valid = false;
     ObRawExpr *tmp_expr = stmt->get_order_item(0).expr_;
@@ -5309,6 +5310,7 @@ int ObDMLResolver::resolve_approx_clause(const ParseNode *approx_node)
           ret = OB_ERR_UNEXPECTED;
         } else if (param_expr->is_const_expr()) {
           has_const = true;
+          has_null_param |= param_expr->get_result_type().is_null();
         } else if (param_expr->is_column_ref_expr()) {
           const ObColumnRefRawExpr &ref_col_expr = static_cast<const ObColumnRefRawExpr&>(*param_expr);
           share::schema::ObSchemaGetterGuard *schema_guard = NULL;
@@ -5344,8 +5346,32 @@ int ObDMLResolver::resolve_approx_clause(const ParseNode *approx_node)
           LOG_USER_ERROR(OB_NOT_SUPPORTED, "Using vector index without column ref or vector const expr is");
         }
       }
-      if (OB_SUCC(ret) && is_match && is_vec_index_valid && tmp_expr->get_expr_type() != T_FUN_SYS_INNER_PRODUCT) {
-        stmt->set_has_vec_approx(true);
+      if (OB_SUCC(ret) && is_match && is_vec_index_valid) {
+        OrderItem &order_item = stmt->get_order_item(0);
+        if (tmp_expr->get_expr_type() != T_FUN_SYS_INNER_PRODUCT) {
+          stmt->set_has_vec_approx(true);
+        } else if (order_item.is_descending() && !has_null_param) {
+          // A NULL query vector retains the exact path; ANN rejects NULL input.
+          // IP indexes return negative inner products in ascending order. Build a
+          // separate sort expression: an alias or ordinal can share the original
+          // expression with SELECT, which must still return positive scores.
+          ObSysFunRawExpr *negative_ip_expr = nullptr;
+          if (OB_ISNULL(params_.expr_factory_) || tmp_expr->get_param_count() != 2) {
+            ret = OB_ERR_UNEXPECTED;
+          } else if (OB_FAIL(params_.expr_factory_->create_raw_expr(
+                         T_FUN_SYS_NEGATIVE_INNER_PRODUCT, negative_ip_expr))) {
+          } else if (OB_FAIL(negative_ip_expr->set_param_exprs(
+                         tmp_expr->get_param_expr(0), tmp_expr->get_param_expr(1)))) {
+          } else {
+            negative_ip_expr->set_func_name(ObString::make_string("negative_inner_product"));
+            if (OB_FAIL(negative_ip_expr->formalize(session_info_))) {
+            } else {
+              order_item.expr_ = negative_ip_expr;
+              order_item.order_type_ = order_item.is_null_first() ? NULLS_FIRST_ASC : NULLS_LAST_ASC;
+              stmt->set_has_vec_approx(true);
+            }
+          }
+        }
       }
       if (OB_SUCC(ret) && !has_const) {
         // if has vector expr, but no const param, not support use vector index
