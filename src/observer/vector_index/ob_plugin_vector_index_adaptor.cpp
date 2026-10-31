@@ -884,6 +884,9 @@ int ObPluginVectorIndexAdaptor::init_mem_data(ObVectorIndexRecordType type, ObVe
       }
 
       if (OB_SUCC(ret)) {
+        ret = obvsag::enable_hipvs_build(snap_data_->index_);
+      }
+      if (OB_SUCC(ret)) {
         snap_data_->set_inited();
         LOG_INFO("create snap data success.", K(ret), KP(snap_data_->index_), K(lbt())); // remove later
       }
@@ -3187,7 +3190,14 @@ int ObPluginVectorIndexAdaptor::renew_single_snap_index(bool mem_saving_mode)
 {
   int ret = OB_SUCCESS;
   ObVectorIndexAlgorithmType index_type = get_snap_index_type();
-  if (mem_saving_mode) {
+  // Snapshot adapters can share this memdata with the background synchronizer
+  // before DDL publishes its SSTable. That adapter owns its own prefix, so
+  // releasing a GPU-built graph here can leave it with a matching prefix but
+  // an empty graph. Retain the imported graph through publication; ordinary
+  // cache eviction still releases it through the tenant allocator.
+  const bool retain_gpu_graph = OB_NOT_NULL(snap_data_)
+      && obvsag::is_hipvs_built(snap_data_->index_);
+  if (mem_saving_mode && !retain_gpu_graph) {
     ObString invalid_prefix("renew");
     if (OB_ISNULL(snap_data_)) {
       ret = OB_ERR_UNEXPECTED;

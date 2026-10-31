@@ -40,7 +40,7 @@ function do_install {
     fi
   fi
   target=$2
-  if [[ "$(uname -s)" == "Darwin" ]]; then
+  if [[ "$(uname -s)" == "Darwin" ]] || ! command -v libtool >/dev/null 2>&1; then
     err_msg=$(cp -f $sources $target 2>&1 >/dev/null)
   else
     err_msg=$(libtool --mode=install cp $sources $target 2>&1 >/dev/null)
@@ -63,6 +63,11 @@ then
   mkdir -p $ADMIN_DIR
 
   do_install $BUILD_DIR/src/observer/seekdb $BIN_DIR/seekdb
+  if [[ -f "$BUILD_DIR/CMakeCache.txt" ]] && \
+      grep -q '^OB_BUILD_HIPVS:BOOL=ON$' "$BUILD_DIR/CMakeCache.txt"; then
+    do_install "$BUILD_DIR/seekdb_hipvs_build_worker" "$BIN_DIR/seekdb_hipvs_build_worker"
+    do_install "$BUILD_DIR/libseekdb_hipvs_build.so" "$LIB_DIR/libseekdb_hipvs_build.so"
+  fi
   do_install "$BUILD_DIR/syspack_release/*" $ADMIN_DIR
   do_install $SOURCE_DIR/deps/3rd/usr/local/oceanbase/devtools/bin/llvm-symbolizer $TOOL_DIR/
   do_install $SOURCE_DIR/rpm/.dep_create/lib/libstdc++.so.6 $LIB_DIR true

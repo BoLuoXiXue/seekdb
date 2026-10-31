@@ -227,8 +227,17 @@ jobs:
           RUNTIME_DIR="${RUNNER_TEMP:-/tmp}/seekdb-mysqltest-runtime-${GITHUB_RUN_ID}"
           mkdir -p "$RUNTIME_DIR/obclient"
           cp -L -f "$SEEKDB_BINARY" "$RUNTIME_DIR/seekdb"
+          RUNTIME_FILES=(seekdb obclient)
+          GPU_WORKER="$(dirname "$SEEKDB_BINARY")/seekdb_hipvs_build_worker"
+          GPU_BRIDGE="$(dirname "$SEEKDB_BINARY")/libseekdb_hipvs_build.so"
+          if [[ -x "$GPU_WORKER" ]]; then
+            test -f "$GPU_BRIDGE"
+            cp -L -f "$GPU_WORKER" "$RUNTIME_DIR/seekdb_hipvs_build_worker"
+            cp -L -f "$GPU_BRIDGE" "$RUNTIME_DIR/libseekdb_hipvs_build.so"
+            RUNTIME_FILES+=(seekdb_hipvs_build_worker libseekdb_hipvs_build.so)
+          fi
           cp -a "$CLIENT_ROOT/." "$RUNTIME_DIR/obclient/"
-          tar -C "$RUNTIME_DIR" -cf - seekdb obclient | zstd -f -q -T0 -o seekdb-mysqltest-runtime.tar.zst
+          tar -C "$RUNTIME_DIR" -cf - "${RUNTIME_FILES[@]}" | zstd -f -q -T0 -o seekdb-mysqltest-runtime.tar.zst
           echo "runtime size: $(stat -c%s seekdb-mysqltest-runtime.tar.zst 2>/dev/null || stat -f%z seekdb-mysqltest-runtime.tar.zst 2>/dev/null) bytes"
       # Runtime 与 run_attempt 无关：仅重跑失败 job 时 setup 可能跳过，因此优先使用稳定路径。
       - name: Persist mysqltest runtime to NFS

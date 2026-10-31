@@ -313,6 +313,7 @@ include(cmake/Rust.cmake)
 include_directories("${CMAKE_SOURCE_DIR}/rust/sql-nio/include")
 
 add_subdirectory(src)
+include(cmake/Hipvs.cmake)
 
 # Farm compile and pretest still publish and consume liboberror.so.  Keep the
 # legacy error-code utility available as an explicit compatibility target
