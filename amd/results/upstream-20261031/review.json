@@ -1,0 +1,27 @@
+{
+  "source": "dd874eff03ba9ab417f8cec60955d8ca76dabf7b",
+  "base": "5bce9e06d1281347ad61344e4b01fab9158c58a2",
+  "scope": "AMD only; original SQL/expected files unchanged",
+  "diff_check": true,
+  "shell_syntax": true,
+  "python_syntax": true,
+  "changed_files": [
+    ".github/workflows/seekdb.yml",
+    "CMakeLists.txt",
+    "amd/README.md",
+    "amd/REPORT.md",
+    "amd/benchmark.py",
+    "amd/run_original_tests.py",
+    "cmake/Hipvs.cmake",
+    "src/oblib/lib/vector/hipvs_build.h",
+    "src/oblib/lib/vector/hipvs_build_bridge.cpp",
+    "src/oblib/lib/vector/hipvs_build_buffer.h",
+    "src/oblib/lib/vector/hipvs_build_worker.cpp",
+    "src/oblib/lib/vector/ob_vsag_adaptor.cpp",
+    "src/oblib/lib/vector/ob_vsag_adaptor.h",
+    "src/oblib/oblib_header_inventory.bzl",
+    "src/observer/vector_index/ob_plugin_vector_index_adaptor.cpp",
+    "tools/deploy/copy.sh"
+  ],
+  "code_review": "worker ownership/error cleanup, tenant buffers/graph cache lifetime and optional build/deploy paths reviewed; private header inventory registered; disabling GPU config removes discoverable stale sidecars"
+}

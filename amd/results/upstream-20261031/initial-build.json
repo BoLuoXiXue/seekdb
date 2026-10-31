@@ -1,0 +1,62 @@
+{
+  "source_candidate": "89760ddf4cbea2ba449809e9f92ad2bbe164ab65",
+  "baseline": "5bce9e06d1281347ad61344e4b01fab9158c58a2",
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "build.sh",
+        "release",
+        "-DOB_ERRSIM=OFF",
+        "-DOB_BUILD_CCLS=OFF",
+        "-DENABLE_THIN_LTO=OFF",
+        "-DENABLE_AUTO_FDO=OFF",
+        "-DENABLE_HOTFUNC=OFF"
+      ],
+      "cwd": "/workspace/competition-amd/source",
+      "exit_code": 0,
+      "seconds": 2.192999556660652
+    },
+    {
+      "argv": [
+        "make",
+        "-j8",
+        "seekdb"
+      ],
+      "cwd": "/workspace/competition-amd/source/build_release",
+      "exit_code": 0,
+      "seconds": 403.46305634081364
+    }
+  ],
+  "exit_code": 0,
+  "artifacts": {
+    "src/observer/seekdb": {
+      "path": "/workspace/competition-amd/source/build_release/src/observer/seekdb",
+      "bytes": 1332577488,
+      "sha256": "850b73adc5536863aaa0d7c66fd1df55768369028c10c211a07883ae20b5a426"
+    },
+    "libseekdb_hipvs_build.so": {
+      "path": "/workspace/competition-amd/source/build_release/libseekdb_hipvs_build.so",
+      "bytes": 162768,
+      "sha256": "f0357e1ac7686c618b6b3a318859b3d58ebe4bb37f1801a67d542efaa2b4e2af"
+    },
+    "seekdb_hipvs_build_worker": {
+      "path": "/workspace/competition-amd/source/build_release/seekdb_hipvs_build_worker",
+      "bytes": 60872,
+      "sha256": "02b68282f0008ad7655cd3c002aaec73cf80f8a01bdcb371adcb73be2cc8a1dc"
+    },
+    "src/observer/libseekdb_hipvs_build.so": {
+      "path": "/workspace/competition-amd/source/build_release/src/observer/libseekdb_hipvs_build.so",
+      "bytes": 162768,
+      "sha256": "f0357e1ac7686c618b6b3a318859b3d58ebe4bb37f1801a67d542efaa2b4e2af"
+    },
+    "src/observer/seekdb_hipvs_build_worker": {
+      "path": "/workspace/competition-amd/source/build_release/src/observer/seekdb_hipvs_build_worker",
+      "bytes": 60872,
+      "sha256": "02b68282f0008ad7655cd3c002aaec73cf80f8a01bdcb371adcb73be2cc8a1dc"
+    }
+  },
+  "cache": "reuse existing native CMake objects; update changed inputs and reconfigure after removing unrelated contest changes",
+  "seconds": 405.6567186396569,
+  "source_hashes_unchanged": true
+}

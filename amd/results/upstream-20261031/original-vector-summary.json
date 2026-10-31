@@ -1,0 +1,210 @@
+{
+  "summary": {
+    "passed": true,
+    "expected_count": 20,
+    "executed_count": 20,
+    "passed_count": 20
+  },
+  "cases": {
+    "all_virtual_vector_index_info": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/all_virtual_vector_index_info.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/all_virtual_vector_index_info.result",
+      "test_sha256": "6f68f285c939782b58038e08958c096bd80d967f64f5f4a97ee3aa3a298fcfaa",
+      "result_sha256": "c7e3a996b9205a7ca601a6148ae733cf6feb55f50cc377d4c7fff9ab38a22619",
+      "exit_code": 0,
+      "duration_seconds": 57.69409755989909,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "create_table_with_hybrid_vector_index": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/create_table_with_hybrid_vector_index.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/create_table_with_hybrid_vector_index.result",
+      "test_sha256": "b5423ca2b60755c894a61a322376d6d703a6c96ce1eec9c74e784f8b83c21caa",
+      "result_sha256": "c47ff0c8581d25894b6e5a51aca4f14d0f854e99a4b7b5fb726f30b7be0980bc",
+      "exit_code": 0,
+      "duration_seconds": 4.520186206325889,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "create_table_with_vector_index": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/create_table_with_vector_index.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/create_table_with_vector_index.result",
+      "test_sha256": "046d437da5a80d4259a2dd79922310cfed0a890e6079cd32ed7e1dc3bc6eadae",
+      "result_sha256": "21d74545ef006387b7dcad85fa4eded517849ded955039173a44e8aa38365792",
+      "exit_code": 0,
+      "duration_seconds": 9.827573239803314,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "drop_vector_index": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/drop_vector_index.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/drop_vector_index.result",
+      "test_sha256": "d34eb594e4868efa8118661be88256c8858a91ad90db5588a8206c2c782a29a3",
+      "result_sha256": "404572eec7c0289bc9775e74773bef8906096a412fe442f27c56ae73bb9bd6a2",
+      "exit_code": 0,
+      "duration_seconds": 7.424275299534202,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "fix_rebuild_or_post_create_hung": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/fix_rebuild_or_post_create_hung.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/fix_rebuild_or_post_create_hung.result",
+      "test_sha256": "86ee0875a44252d20074631a2a964abdfd51053e088d64f38d778d338de1fd8f",
+      "result_sha256": "1bd53efeeab75505757eb0722e4d58c8f48d5af8e8d26cc1c5ca75ac7a0084b8",
+      "exit_code": 0,
+      "duration_seconds": 4.67107317969203,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "rebuild_vector_index": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/rebuild_vector_index.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/rebuild_vector_index.result",
+      "test_sha256": "68132bd12cffcecdd5151216466dd2e518c9434b0568ad27a66030cdfcadf02b",
+      "result_sha256": "d2299d7ed284e8232b3c16d2513be4d433ff81a0476f44f8c41b0fb3fe9d9f0d",
+      "exit_code": 0,
+      "duration_seconds": 66.25611739978194,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "sparse_vector_index_vsag_ddl": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/sparse_vector_index_vsag_ddl.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/sparse_vector_index_vsag_ddl.result",
+      "test_sha256": "64b5f07e4e9adca198f3981984153c836903a5e0ec2a985466196c237a632411",
+      "result_sha256": "51c55538c0e231ee904b84f49364758d40025c69548226a6b2840f6ae03521e7",
+      "exit_code": 0,
+      "duration_seconds": 12.081104651093483,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "sparse_vector_index_vsag_query": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/sparse_vector_index_vsag_query.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/sparse_vector_index_vsag_query.result",
+      "test_sha256": "48aa98d6130cd6b1e8076377bb83f6acf334a0e71d67e6174b6c99ac86406408",
+      "result_sha256": "057246c66e7b6e3fe47599a55abd39b838461e9fb71bba99479239d3075c578c",
+      "exit_code": 0,
+      "duration_seconds": 8.176125206053257,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_basic": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_basic.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_basic.result",
+      "test_sha256": "4159566f0107594409370d5d4822a15b1b65c953e7c94b9cfba5eebc4523cd3b",
+      "result_sha256": "12f38ee3b3e25bd21f6e54364a8451530ad132bdcd17ea15abd72c4f63581a0f",
+      "exit_code": 0,
+      "duration_seconds": 11.881082093343139,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_bugfix1": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_bugfix1.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_bugfix1.result",
+      "test_sha256": "d46cd78dba4038bf542b86876cfcc0c4f20ddb819d9b79121ea0e02ee1150ade",
+      "result_sha256": "9c71dc7befb0b653ac2fff0e4f9001d6174f319b085047201b9cced79434b3ae",
+      "exit_code": 0,
+      "duration_seconds": 13.482705641537905,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_heap_rr_snapshot": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_heap_rr_snapshot.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_heap_rr_snapshot.result",
+      "test_sha256": "b3d1231c8c3d8fb272fdd70ae07e11257182a75f3e7c6ee6e49d99432914578a",
+      "result_sha256": "2fce2ba51780775becb482af076c1f89f255353d63b8b711acfbbbecd6848b5d",
+      "exit_code": 0,
+      "duration_seconds": 0.7148731388151646,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_identifier_quoting": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_identifier_quoting.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_identifier_quoting.result",
+      "test_sha256": "58edbe3c3b7c1b447bd7f37657755fec72cecec3a90d5c6ffcdd0eacbb841ecb",
+      "result_sha256": "6c1599392848c74ebdc888504d124ea8f6e67ac9be6bb40cd25f8416bbbcf8cb",
+      "exit_code": 0,
+      "duration_seconds": 6.723395133391023,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_ivfflat_basic": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_ivfflat_basic.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_ivfflat_basic.result",
+      "test_sha256": "8c59be6c5c29109666596d556d7ace4a687d3e4678d82c218be65d88135737af",
+      "result_sha256": "40bc9f29fed43205f408d5d65d27392d15771f0adaee8130a376c3333f231f07",
+      "exit_code": 0,
+      "duration_seconds": 6.623118257150054,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_ivfflat_post_create": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_ivfflat_post_create.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_ivfflat_post_create.result",
+      "test_sha256": "1375b4cf534fbb6521d9d5bfbf49f721749b6c3e08b90aaec5f5fe0ee8026de4",
+      "result_sha256": "8abfaf2edcb5efce4c2a76c5e01ffdd0c916d8dfa7bf21f0862f70a18661658e",
+      "exit_code": 0,
+      "duration_seconds": 11.880485182628036,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_offline_ddl": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_offline_ddl.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_offline_ddl.result",
+      "test_sha256": "effee625b6c5bc6727def376caf45fa458c28250cdceb4a60dceed69ae99d6d8",
+      "result_sha256": "1d7e8882562049858b813564ef34026cf80a802f5bcdc509766adf79a170e7a8",
+      "exit_code": 0,
+      "duration_seconds": 27.954537170007825,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_partitioned": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_partitioned.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_partitioned.result",
+      "test_sha256": "161f0f7a9b8c11494f4a4e700114c486d143b8fecb6236b1e99f2270042859ff",
+      "result_sha256": "4e442e010bc0d62ef9472e87e7d1cfcb62b3e3ae294d6a5993a204c156b14eca",
+      "exit_code": 0,
+      "duration_seconds": 48.78259483538568,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_post_create": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_post_create.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_post_create.result",
+      "test_sha256": "09bc2bea8991ee2f7cd1e0f46a70f89430fdfc5df7add5b00975993d3b38f9a5",
+      "result_sha256": "8f6545e45a6dcaa8d1ec9558fa25f1ef2e1295885d6e33544285b6d53d4d8121",
+      "exit_code": 0,
+      "duration_seconds": 10.478538190945983,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_rebuild": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_rebuild.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_rebuild.result",
+      "test_sha256": "40b39c7594258f5e1b893caa47d1cd3a9223bde91887dd675ac0799242381e35",
+      "result_sha256": "b40350fcf0cc6bf41e95247887f0bad88398d8716df875d1fe181f106d6babdf",
+      "exit_code": 0,
+      "duration_seconds": 6.973832489922643,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_index_rr_snapshot": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_index_rr_snapshot.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_index_rr_snapshot.result",
+      "test_sha256": "40878edd311da672f0b1ad7d225b12fa9a695396ceb1c2381d809c4f128eb2a0",
+      "result_sha256": "c109f7701bb3a170092ee8450f9623a2b226c4260b45de5e93dffccb3994391e",
+      "exit_code": 0,
+      "duration_seconds": 0.11411027982831001,
+      "inputs_unchanged": true,
+      "passed": true
+    },
+    "vector_similarity": {
+      "test_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/t/vector_similarity.test",
+      "result_file": "/workspace/competition-amd/source/tools/deploy/mysql_test/test_suite/vector_index/r/mysql/vector_similarity.result",
+      "test_sha256": "3058761a1316b87fecbc8850b8d81cfe00d55fae3f7acd8bc62ecfab312c9e1d",
+      "result_sha256": "572e00521bff1bd97daad4e79ffddc16de8c88be0bb2ad6b33918c1380ab949f",
+      "exit_code": 0,
+      "duration_seconds": 4.97054335474968,
+      "inputs_unchanged": true,
+      "passed": true
+    }
+  }
+}

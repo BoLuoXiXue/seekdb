@@ -1,0 +1,26 @@
+{
+  "gpu-demo-m16": {
+    "recall_at_k": 1.0,
+    "queries": 100,
+    "results_identical": true,
+    "rebuild": false
+  },
+  "gpu-100k-m16": {
+    "recall_at_k": 0.968,
+    "queries": 100,
+    "results_identical": true,
+    "rebuild": false
+  },
+  "gpu-demo-m64": {
+    "recall_at_k": 1.0,
+    "queries": 100,
+    "results_identical": true,
+    "rebuild": false
+  },
+  "gpu-100k-m64": {
+    "recall_at_k": 1.0,
+    "queries": 100,
+    "results_identical": true,
+    "rebuild": false
+  }
+}

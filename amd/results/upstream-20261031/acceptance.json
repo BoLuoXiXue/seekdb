@@ -1,0 +1,590 @@
+{
+  "stage": "complete",
+  "status": "passed",
+  "commands": [
+    {
+      "label": "component-install",
+      "argv": [
+        "/workspace/competition-amd/source/deps/3rd/usr/local/oceanbase/devtools/bin/cmake",
+        "--install",
+        "/workspace/competition-amd/source/build_release",
+        "--prefix",
+        "/workspace/competition-amd/runtime/upstream-component-install",
+        "--component",
+        "server"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 0.0058967843651771545
+    },
+    {
+      "label": "standard-deploy",
+      "argv": [
+        "bash",
+        "/workspace/competition-amd/source/tools/deploy/copy.sh",
+        "/workspace/competition-amd/source/build_release"
+      ],
+      "cwd": "/workspace/competition-amd/runtime/deploy-upstream",
+      "exit_code": 0,
+      "seconds": 1.0727425049990416
+    },
+    {
+      "label": "instance-start-upstream-cpu",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/runtime/instance.py",
+        "start",
+        "--binary",
+        "/workspace/competition-amd/runtime/deploy-upstream/bin/seekdb",
+        "--label",
+        "upstream-cpu",
+        "--mode",
+        "cpu"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 1.8711796645075083
+    },
+    {
+      "label": "cpu-demo-m16",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-demo",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/cpu-demo-m16",
+        "--schema",
+        "amd_upstream_cpu_demo_m16",
+        "--backend",
+        "cpu",
+        "--m",
+        "16",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 11.321670925244689
+    },
+    {
+      "label": "cpu-100k-m16",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-100k",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/cpu-100k-m16",
+        "--schema",
+        "amd_upstream_cpu_100k_m16",
+        "--backend",
+        "cpu",
+        "--m",
+        "16",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 130.65839585661888
+    },
+    {
+      "label": "cpu-demo-m64",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-demo",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/cpu-demo-m64",
+        "--schema",
+        "amd_upstream_cpu_demo_m64",
+        "--backend",
+        "cpu",
+        "--m",
+        "64",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 13.59605030156672
+    },
+    {
+      "label": "cpu-100k-m64",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-100k",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/cpu-100k-m64",
+        "--schema",
+        "amd_upstream_cpu_100k_m64",
+        "--backend",
+        "cpu",
+        "--m",
+        "64",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 334.30985217541456
+    },
+    {
+      "label": "instance-stop-cpu",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/runtime/instance.py",
+        "stop"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 1.0357135143131018
+    },
+    {
+      "label": "instance-start-upstream-auto",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/runtime/instance.py",
+        "start",
+        "--binary",
+        "/workspace/competition-amd/runtime/deploy-upstream/bin/seekdb",
+        "--label",
+        "upstream-auto",
+        "--mode",
+        "auto"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 1.8740701507776976
+    },
+    {
+      "label": "gpu-demo-m16",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-demo",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/gpu-demo-m16",
+        "--schema",
+        "amd_upstream_gpu_demo_m16",
+        "--backend",
+        "hipvs",
+        "--m",
+        "16",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 6.803738975897431
+    },
+    {
+      "label": "gpu-100k-m16",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-100k",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/gpu-100k-m16",
+        "--schema",
+        "amd_upstream_gpu_100k_m16",
+        "--backend",
+        "hipvs",
+        "--m",
+        "16",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 29.46709589101374
+    },
+    {
+      "label": "gpu-demo-m64",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-demo",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/gpu-demo-m64",
+        "--schema",
+        "amd_upstream_gpu_demo_m64",
+        "--backend",
+        "hipvs",
+        "--m",
+        "64",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 6.9737909864634275
+    },
+    {
+      "label": "gpu-100k-m64",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/benchmark.py",
+        "run",
+        "--data",
+        "/workspace/competition-amd/runtime/data-100k",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/gpu-100k-m64",
+        "--schema",
+        "amd_upstream_gpu_100k_m64",
+        "--backend",
+        "hipvs",
+        "--m",
+        "64",
+        "--ef-construction",
+        "200",
+        "--ef-search",
+        "1000"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 35.853752883151174
+    },
+    {
+      "label": "original-vector-tests",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/source/amd/run_original_tests.py",
+        "--tree",
+        "/workspace/competition-amd/source",
+        "--mysqltest",
+        "/workspace/competition-amd/runtime/client/mysqltest",
+        "--port",
+        "2888",
+        "--source-record",
+        "/workspace/competition-amd/evidence/upstream-20261031/source.json",
+        "--output",
+        "/workspace/competition-amd/evidence/upstream-20261031/acceptance/original-vector"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 321.37854483909905
+    },
+    {
+      "label": "instance-stop-gpu",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/runtime/instance.py",
+        "stop"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 1.0343012399971485
+    },
+    {
+      "label": "instance-start-upstream-auto",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/runtime/instance.py",
+        "start",
+        "--binary",
+        "/workspace/competition-amd/runtime/deploy-upstream/bin/seekdb",
+        "--label",
+        "upstream-auto",
+        "--mode",
+        "cpu"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 3.8833552729338408
+    },
+    {
+      "label": "instance-stop-restored_cpu_only",
+      "argv": [
+        "/workspace/competition-amd/venv/bin/python",
+        "/workspace/competition-amd/runtime/instance.py",
+        "stop"
+      ],
+      "cwd": null,
+      "exit_code": 0,
+      "seconds": 1.0342361479997635
+    }
+  ],
+  "groups": [
+    "cpu-demo-m16",
+    "cpu-100k-m16",
+    "cpu-demo-m64",
+    "cpu-100k-m64",
+    "gpu-demo-m16",
+    "gpu-100k-m16",
+    "gpu-demo-m64",
+    "gpu-100k-m64"
+  ],
+  "build": {
+    "source_candidate": "dd874eff03ba9ab417f8cec60955d8ca76dabf7b",
+    "baseline": "5bce9e06d1281347ad61344e4b01fab9158c58a2",
+    "commands": [
+      {
+        "argv": [
+          "bash",
+          "build.sh",
+          "release",
+          "-DOB_ERRSIM=OFF",
+          "-DOB_BUILD_CCLS=OFF",
+          "-DENABLE_THIN_LTO=OFF",
+          "-DENABLE_AUTO_FDO=OFF",
+          "-DENABLE_HOTFUNC=OFF",
+          "-DOB_BUILD_HIPVS=OFF"
+        ],
+        "cwd": "/workspace/competition-amd/source",
+        "exit_code": 0,
+        "seconds": 0.7081726510077715
+      },
+      {
+        "argv": [
+          "bash",
+          "/workspace/competition-amd/source/tools/deploy/copy.sh",
+          "/workspace/competition-amd/source/build_release"
+        ],
+        "cwd": "/workspace/competition-amd/runtime/upstream-cpu-deploy-config",
+        "exit_code": 0,
+        "seconds": 1.0006900914013386
+      },
+      {
+        "argv": [
+          "bash",
+          "build.sh",
+          "release",
+          "-DOB_ERRSIM=OFF",
+          "-DOB_BUILD_CCLS=OFF",
+          "-DENABLE_THIN_LTO=OFF",
+          "-DENABLE_AUTO_FDO=OFF",
+          "-DENABLE_HOTFUNC=OFF",
+          "-DOB_BUILD_HIPVS=ON"
+        ],
+        "cwd": "/workspace/competition-amd/source",
+        "exit_code": 0,
+        "seconds": 0.6962572038173676
+      },
+      {
+        "argv": [
+          "make",
+          "-j8",
+          "seekdb"
+        ],
+        "cwd": "/workspace/competition-amd/source/build_release",
+        "exit_code": 0,
+        "seconds": 0.6265355926007032
+      }
+    ],
+    "exit_code": 0,
+    "artifacts": {
+      "src/observer/seekdb": {
+        "path": "/workspace/competition-amd/source/build_release/src/observer/seekdb",
+        "bytes": 1332577488,
+        "sha256": "850b73adc5536863aaa0d7c66fd1df55768369028c10c211a07883ae20b5a426"
+      },
+      "libseekdb_hipvs_build.so": {
+        "path": "/workspace/competition-amd/source/build_release/libseekdb_hipvs_build.so",
+        "bytes": 162768,
+        "sha256": "f0357e1ac7686c618b6b3a318859b3d58ebe4bb37f1801a67d542efaa2b4e2af"
+      },
+      "seekdb_hipvs_build_worker": {
+        "path": "/workspace/competition-amd/source/build_release/seekdb_hipvs_build_worker",
+        "bytes": 60872,
+        "sha256": "02b68282f0008ad7655cd3c002aaec73cf80f8a01bdcb371adcb73be2cc8a1dc"
+      },
+      "src/observer/libseekdb_hipvs_build.so": {
+        "path": "/workspace/competition-amd/source/build_release/src/observer/libseekdb_hipvs_build.so",
+        "bytes": 162768,
+        "sha256": "f0357e1ac7686c618b6b3a318859b3d58ebe4bb37f1801a67d542efaa2b4e2af"
+      },
+      "src/observer/seekdb_hipvs_build_worker": {
+        "path": "/workspace/competition-amd/source/build_release/src/observer/seekdb_hipvs_build_worker",
+        "bytes": 60872,
+        "sha256": "02b68282f0008ad7655cd3c002aaec73cf80f8a01bdcb371adcb73be2cc8a1dc"
+      }
+    },
+    "initial_full_build": {
+      "source_candidate": "89760ddf4cbea2ba449809e9f92ad2bbe164ab65",
+      "baseline": "5bce9e06d1281347ad61344e4b01fab9158c58a2",
+      "commands": [
+        {
+          "argv": [
+            "bash",
+            "build.sh",
+            "release",
+            "-DOB_ERRSIM=OFF",
+            "-DOB_BUILD_CCLS=OFF",
+            "-DENABLE_THIN_LTO=OFF",
+            "-DENABLE_AUTO_FDO=OFF",
+            "-DENABLE_HOTFUNC=OFF"
+          ],
+          "cwd": "/workspace/competition-amd/source",
+          "exit_code": 0,
+          "seconds": 2.192999556660652
+        },
+        {
+          "argv": [
+            "make",
+            "-j8",
+            "seekdb"
+          ],
+          "cwd": "/workspace/competition-amd/source/build_release",
+          "exit_code": 0,
+          "seconds": 403.46305634081364
+        }
+      ],
+      "exit_code": 0,
+      "artifacts": {
+        "src/observer/seekdb": {
+          "path": "/workspace/competition-amd/source/build_release/src/observer/seekdb",
+          "bytes": 1332577488,
+          "sha256": "850b73adc5536863aaa0d7c66fd1df55768369028c10c211a07883ae20b5a426"
+        },
+        "libseekdb_hipvs_build.so": {
+          "path": "/workspace/competition-amd/source/build_release/libseekdb_hipvs_build.so",
+          "bytes": 162768,
+          "sha256": "f0357e1ac7686c618b6b3a318859b3d58ebe4bb37f1801a67d542efaa2b4e2af"
+        },
+        "seekdb_hipvs_build_worker": {
+          "path": "/workspace/competition-amd/source/build_release/seekdb_hipvs_build_worker",
+          "bytes": 60872,
+          "sha256": "02b68282f0008ad7655cd3c002aaec73cf80f8a01bdcb371adcb73be2cc8a1dc"
+        },
+        "src/observer/libseekdb_hipvs_build.so": {
+          "path": "/workspace/competition-amd/source/build_release/src/observer/libseekdb_hipvs_build.so",
+          "bytes": 162768,
+          "sha256": "f0357e1ac7686c618b6b3a318859b3d58ebe4bb37f1801a67d542efaa2b4e2af"
+        },
+        "src/observer/seekdb_hipvs_build_worker": {
+          "path": "/workspace/competition-amd/source/build_release/src/observer/seekdb_hipvs_build_worker",
+          "bytes": 60872,
+          "sha256": "02b68282f0008ad7655cd3c002aaec73cf80f8a01bdcb371adcb73be2cc8a1dc"
+        }
+      },
+      "cache": "reuse existing native CMake objects; update changed inputs and reconfigure after removing unrelated contest changes",
+      "seconds": 405.6567186396569,
+      "source_hashes_unchanged": true
+    },
+    "cache": "initial native compile/link plus final build-configuration-only change; same compiled inputs, full product target rerun",
+    "explicit_off_removes_discoverable_and_deployed_sidecars": true,
+    "reenable_restores_discoverable_sidecars": true,
+    "initial_and_final_native_artifact_hashes_identical": true,
+    "seconds": 3.9432101603597403,
+    "source_hashes_unchanged": true
+  },
+  "cpu_baseline": "Unmodified native VSAG CPU construction path in the same AMD-only candidate, selected by SEEKDB_HIPVS_BUILD=0",
+  "benchmark_sha256": "cbfcaa065439e4079d8917fde6a1aac1e14065942cdbcee9147f86412f84d669",
+  "deployment_verified": true,
+  "backend": "restored_cpu_only",
+  "automatic_instance": {
+    "pid": 23454,
+    "start_ticks": "1077070678",
+    "boot_id": "98f92f07-0c94-4d5e-b189-1f2e2fe118d9",
+    "argv": [
+      "/workspace/competition-amd/runtime/deploy-upstream/bin/seekdb",
+      "--nodaemon",
+      "--base-dir=/workspace/competition-amd/runtime/db-upstream-auto",
+      "--port=2888",
+      "--log-level=INFO",
+      "--parameter",
+      "cpu_count=8",
+      "--parameter",
+      "rpc_port=2889",
+      "--parameter",
+      "memory_budget=8G",
+      "--parameter",
+      "datafile_size=1G",
+      "--parameter",
+      "datafile_maxsize=8G",
+      "--parameter",
+      "log_disk_size=2G",
+      "--parameter",
+      "syslog_level=INFO",
+      "--parameter",
+      "max_syslog_file_count=4"
+    ],
+    "base": "/workspace/competition-amd/runtime/db-upstream-auto",
+    "gpu_enabled": true,
+    "selection_mode": "auto",
+    "worker_path_override": null,
+    "binary_sha256": "850b73adc5536863aaa0d7c66fd1df55768369028c10c211a07883ae20b5a426",
+    "console": "/workspace/competition-amd/evidence/console-upstream-auto-20261031T062059.log",
+    "parameters": [
+      "/workspace/competition-amd/runtime/deploy-upstream/bin/seekdb",
+      "--nodaemon",
+      "--base-dir=/workspace/competition-amd/runtime/db-upstream-auto",
+      "--port=2888",
+      "--log-level=INFO",
+      "--parameter",
+      "cpu_count=8",
+      "--parameter",
+      "rpc_port=2889",
+      "--parameter",
+      "memory_budget=8G",
+      "--parameter",
+      "datafile_size=1G",
+      "--parameter",
+      "datafile_maxsize=8G",
+      "--parameter",
+      "log_disk_size=2G",
+      "--parameter",
+      "syslog_level=INFO",
+      "--parameter",
+      "max_syslog_file_count=4"
+    ]
+  },
+  "quality_comparison": {
+    "demo-m16": {
+      "cpu_min_recall": 1.0,
+      "gpu_min_recall": 1.0,
+      "speedup": 1.8695129859145185,
+      "no_recall_regression": true
+    },
+    "100k-m16": {
+      "cpu_min_recall": 0.934,
+      "gpu_min_recall": 0.968,
+      "speedup": 5.609337629548063,
+      "no_recall_regression": true
+    },
+    "demo-m64": {
+      "cpu_min_recall": 1.0,
+      "gpu_min_recall": 1.0,
+      "speedup": 2.455843178391374,
+      "no_recall_regression": true
+    },
+    "100k-m64": {
+      "cpu_min_recall": 0.998,
+      "gpu_min_recall": 1.0,
+      "speedup": 12.235029785638535,
+      "no_recall_regression": true
+    }
+  },
+  "gpu_build_records": 12,
+  "persistence_passed": true,
+  "remaining_temporaries": []
+}

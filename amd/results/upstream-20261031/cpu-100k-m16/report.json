@@ -1,0 +1,241 @@
+{
+  "backend": "cpu",
+  "schema": "amd_upstream_cpu_100k_m16",
+  "data": {
+    "rows": 100000,
+    "dim": 128,
+    "queries": 100,
+    "k": 10,
+    "seed": 20261030,
+    "demo": null,
+    "preparation_seconds": 3.345792667940259,
+    "files": {
+      "base.f32": "f4e7fe440f8aa4af6a0da9f9b86ccd6c773c3766e00a865d66d1bef30a4a6737",
+      "ids.npy": "552fd51a74be081339424076b96498124f6fe69fea6d9208a3ccab078d25f543",
+      "query.f32": "664e9388a2e0e7bb062a22bb1d35eebddf3accf611a4e1c3e8636151ca9c4ae7",
+      "truth.npy": "2abf209193ddae28ba32c0b16bd0afce493eed4d19d7d1c782bdcc19d3c2ad59"
+    }
+  },
+  "parameters": {
+    "m": 16,
+    "ef_construction": 200,
+    "ef_search": 1000,
+    "distance": "l2",
+    "dtype": "float32"
+  },
+  "official_speedup_target": null,
+  "official_recall_threshold": null,
+  "timing": "CREATE VECTOR INDEX through completion of first probe and self query",
+  "rounds": [
+    {
+      "round": 1,
+      "ddl_seconds": 40.82395965792239,
+      "build_through_first_queries_seconds": 40.90080749988556,
+      "recall_at_k": 0.934,
+      "returned_results": 1000,
+      "first_probe": [
+        [
+          100000058573,
+          11.995273294964914
+        ],
+        [
+          100000248146,
+          12.058284991592982
+        ],
+        [
+          100000278401,
+          12.185594302129616
+        ],
+        [
+          100000204991,
+          12.201338047381704
+        ],
+        [
+          100000169321,
+          12.28359365062329
+        ],
+        [
+          100000109975,
+          12.286847185894812
+        ],
+        [
+          100000184636,
+          12.290151384133633
+        ],
+        [
+          100000256615,
+          12.366843878477987
+        ],
+        [
+          100000218380,
+          12.426624239520336
+        ],
+        [
+          100000031675,
+          12.443225558700103
+        ]
+      ],
+      "self_query": [
+        [
+          100000000001,
+          0.0
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "ddl_seconds": 39.427131885662675,
+      "build_through_first_queries_seconds": 39.50278525426984,
+      "recall_at_k": 0.934,
+      "returned_results": 1000,
+      "first_probe": [
+        [
+          100000058573,
+          11.995273294964914
+        ],
+        [
+          100000248146,
+          12.058284991592982
+        ],
+        [
+          100000278401,
+          12.185594302129616
+        ],
+        [
+          100000204991,
+          12.201338047381704
+        ],
+        [
+          100000169321,
+          12.28359365062329
+        ],
+        [
+          100000109975,
+          12.286847185894812
+        ],
+        [
+          100000184636,
+          12.290151384133633
+        ],
+        [
+          100000256615,
+          12.366843878477987
+        ],
+        [
+          100000218380,
+          12.426624239520336
+        ],
+        [
+          100000031675,
+          12.443225558700103
+        ]
+      ],
+      "self_query": [
+        [
+          100000000001,
+          0.0
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "ddl_seconds": 40.12905586697161,
+      "build_through_first_queries_seconds": 40.2031879927963,
+      "recall_at_k": 0.934,
+      "returned_results": 1000,
+      "first_probe": [
+        [
+          100000058573,
+          11.995273294964914
+        ],
+        [
+          100000248146,
+          12.058284991592982
+        ],
+        [
+          100000278401,
+          12.185594302129616
+        ],
+        [
+          100000204991,
+          12.201338047381704
+        ],
+        [
+          100000169321,
+          12.28359365062329
+        ],
+        [
+          100000109975,
+          12.286847185894812
+        ],
+        [
+          100000184636,
+          12.290151384133633
+        ],
+        [
+          100000256615,
+          12.366843878477987
+        ],
+        [
+          100000218380,
+          12.426624239520336
+        ],
+        [
+          100000031675,
+          12.443225558700103
+        ]
+      ],
+      "self_query": [
+        [
+          100000000001,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "status": "measured",
+  "import_seconds": 7.9740941375494,
+  "input_row_check": [
+    100000,
+    100000000001,
+    100000299998
+  ],
+  "ddl": "CREATE VECTOR INDEX hnsw_idx ON vectors(embedding) WITH (distance=l2,type=hnsw,lib=vsag,m=16,ef_construction=200,ef_search=1000)",
+  "query_plan": [
+    [
+      "=============================================================="
+    ],
+    [
+      "|ID|OPERATOR         |NAME             |EST.ROWS|EST.TIME(us)|"
+    ],
+    [
+      "--------------------------------------------------------------"
+    ],
+    [
+      "|0 |VECTOR INDEX SCAN|vectors(hnsw_idx)|1       |7           |"
+    ],
+    [
+      "=============================================================="
+    ],
+    [
+      "Outputs & filters:"
+    ],
+    [
+      "-------------------------------------"
+    ],
+    [
+      "  0 - output([vectors.id]), filter(nil), rowset=16"
+    ],
+    [
+      "      access([vectors.id]), partitions(p0)"
+    ],
+    [
+      "      is_index_back=true, is_global_index=false, "
+    ],
+    [
+      "      range_key([vectors.__vid_1793427269640323], [vectors.__type_17_1793427270030677]), range(MIN,MIN ; MAX,MAX)always true"
+    ]
+  ],
+  "median_build_seconds": 40.2031879927963,
+  "minimum_recall_at_k": 0.934
+}

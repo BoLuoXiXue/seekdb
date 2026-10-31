@@ -1,0 +1,30 @@
+{
+  "arch": "x86_64",
+  "boot_id": "98f92f07-0c94-4d5e-b189-1f2e2fe118d9",
+  "cpu_quota": "1600000 100000",
+  "memory_limit": "59055800320",
+  "rocm_version": "7.2.4",
+  "database_cpu_count": 8,
+  "database_memory_budget": "8G",
+  "OMP_NUM_THREADS": 8,
+  "shared_cloud_instance": true,
+  "hipvs_libraries": {
+    "/opt/hipvs/lib/libcuvs.so": {
+      "bytes": 456132800,
+      "sha256": "5ccf012af5923c687cd2d22149740a410ca69e0aa51223a6386ba6fc129c967a"
+    },
+    "/opt/hipvs/lib/libcuvs_c.so": {
+      "bytes": 1143408,
+      "sha256": "b63211897276e0a6911bb534fe77c8b0b59f31c50af1df2f108845f06ad46ebf"
+    }
+  },
+  "cpu_model": "AMD EPYC 9334 32-Core Processor",
+  "gpu_arch": "gfx1100",
+  "gpu_vram_bytes": "51522830336",
+  "benchmark_packages": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "PyMySQL": "1.2.3"
+  },
+  "compiler": "clang version 17.0.6 (git@gitlab.oceanbase-dev.com:oceanbase-ce-publish/ob-deps.git e363299bcdda429f8e7c00590d1dfeac7656ad3c)"
+}

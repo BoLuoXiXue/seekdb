@@ -1,0 +1,26 @@
+{
+  "demo-m16": {
+    "cpu_min_recall": 1.0,
+    "gpu_min_recall": 1.0,
+    "speedup": 1.8695129859145185,
+    "no_recall_regression": true
+  },
+  "100k-m16": {
+    "cpu_min_recall": 0.934,
+    "gpu_min_recall": 0.968,
+    "speedup": 5.609337629548063,
+    "no_recall_regression": true
+  },
+  "demo-m64": {
+    "cpu_min_recall": 1.0,
+    "gpu_min_recall": 1.0,
+    "speedup": 2.455843178391374,
+    "no_recall_regression": true
+  },
+  "100k-m64": {
+    "cpu_min_recall": 0.998,
+    "gpu_min_recall": 1.0,
+    "speedup": 12.235029785638535,
+    "no_recall_regression": true
+  }
+}

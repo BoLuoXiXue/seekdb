@@ -1,0 +1,26 @@
+{
+  "head": "dd874eff03ba9ab417f8cec60955d8ca76dabf7b",
+  "baseline": "5bce9e06d1281347ad61344e4b01fab9158c58a2",
+  "branch": "amd/hipvs-hnsw-competition",
+  "tracked_file_count": 9191,
+  "complete_source_manifest_sha256": "8a6566641eb4c1f74f7bd16908aadc093d829cfd9cc60355f0c830c5f5668cd3",
+  "files": {
+    ".github/workflows/seekdb.yml": "141f6e4c352466ec959c0c7f46e92e748effd815c6207bb0a662d2225d7c5969",
+    "CMakeLists.txt": "8d906444ba91676edc8ed8c7787af8cb2acb3d55aad65f11f72aef143de79a2e",
+    "amd/README.md": "a2683047bda82f40a8ab3881fc64535426df96463287e7a00d9ad798d0df064c",
+    "amd/REPORT.md": "84317b0a4b17b0a5afaeacccc7d13a3707cb37fd9abd23f346fc66283a7232f8",
+    "amd/benchmark.py": "cbfcaa065439e4079d8917fde6a1aac1e14065942cdbcee9147f86412f84d669",
+    "amd/run_original_tests.py": "10f00e9db0a7370ab187f08ab8d0499057f7a149f1b7851bc29d6e704e01ac17",
+    "cmake/Hipvs.cmake": "91be51dbd7e4cb1c12138b2e7c22093f89dc2dc1d6917d447151722ebbf6cfa0",
+    "src/oblib/lib/vector/hipvs_build.h": "b3d36f27e4099bdb14fae0d3c11a919ace2a6f33ed90e2c516001ca96358f044",
+    "src/oblib/lib/vector/hipvs_build_bridge.cpp": "aa8a5b6f499fa308c6c5172111b019dd10c7f1708a179c28d2938b7268eb9258",
+    "src/oblib/lib/vector/hipvs_build_buffer.h": "ce0d78fd4241020681b316a4e0c0d5a5d66942fd8d1a1d5347121c03c641317c",
+    "src/oblib/lib/vector/hipvs_build_worker.cpp": "09ff23feba69bf9fe15dd91314955aa322f960133d58bd4630770459da29a458",
+    "src/oblib/lib/vector/ob_vsag_adaptor.cpp": "3709a36f050f0742be753e2a9296eba0fe42d4ccfc66f9625e6defdd840bd40a",
+    "src/oblib/lib/vector/ob_vsag_adaptor.h": "a3061feef443227c9a6b19db120c4a0fbf754591d0e240baea14ef68a6f85beb",
+    "src/oblib/oblib_header_inventory.bzl": "0430549de5be28004fd51d3840998c63a0d78b5a35061835dfda016e288e0e38",
+    "src/observer/vector_index/ob_plugin_vector_index_adaptor.cpp": "310c0b1598fd9a830614a3bd75550c2c638fe680246414a80c09159e5090bd9e",
+    "tools/deploy/copy.sh": "98df9870afd48e4ea16925f89c8890e46f5b600f738aefe2d723214b566af613"
+  },
+  "note": "Final documentation/evidence commit does not change compiled, deployed or benchmark inputs."
+}
