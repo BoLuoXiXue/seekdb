@@ -40,13 +40,14 @@ if(OB_BUILD_HIPVS)
   target_link_libraries(hipvs_build_worker PRIVATE hipvs_bridge)
   # A build-tree server and an installed server discover the worker beside
   # their executable; neither depends on the caller's working directory.
-  add_custom_command(TARGET hipvs_build_worker POST_BUILD
+  add_custom_target(hipvs_build_runtime
     COMMAND "${CMAKE_COMMAND}" -E copy_if_different
       "$<TARGET_FILE:hipvs_build_worker>" "${CMAKE_BINARY_DIR}/src/observer/seekdb_hipvs_build_worker"
     COMMAND "${CMAKE_COMMAND}" -E copy_if_different
       "$<TARGET_FILE:hipvs_bridge>" "${CMAKE_BINARY_DIR}/src/observer/libseekdb_hipvs_build.so"
+    DEPENDS hipvs_build_worker hipvs_bridge
     VERBATIM)
-  add_dependencies(seekdb hipvs_build_worker)
+  add_dependencies(seekdb hipvs_build_runtime)
   install(TARGETS hipvs_build_worker RUNTIME DESTINATION usr/bin COMPONENT server)
   install(TARGETS hipvs_bridge LIBRARY DESTINATION usr/libexec/seekdb/lib COMPONENT server)
 else()
